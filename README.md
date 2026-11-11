@@ -330,8 +330,6 @@ We run Meta ads end-to-end and feed every lead directly into your CRM with autom
 - **Book a call:** [go.mediatraffics.com/leads](https://go.mediatraffics.com/leads?utm_source=github&utm_medium=readme&utm_campaign=meta-ads-kill-switch)
 - **Learn more:** [kenjiai.com](https://kenjiai.com/?utm_source=github&utm_medium=readme&utm_campaign=meta-ads-kill-switch)
 
-More free tools: [kenji-clip-engine](https://github.com/yousiful/kenji-clip-engine)
-
 ---
 
 ## More free tools from us
