@@ -1,0 +1,58 @@
+name: Meta Ads Kill Switch
+
+on:
+  schedule:
+    # Every 30 minutes around the clock.
+    # Adjust or remove the second line to run less frequently.
+    - cron: "0,30 * * * *"
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: "Set to 'true' to pause matching ads (default: dry run)"
+        required: false
+        default: "false"
+
+jobs:
+  kill-switch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run kill switch
+        env:
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          META_AD_ACCOUNT_ID: ${{ secrets.META_AD_ACCOUNT_ID }}
+          # Optional email notification:
+          # SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          # SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          # SMTP_USER: ${{ secrets.SMTP_USER }}
+          # SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          # NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
+        run: |
+          # APPLY=true in repo Variables enables live pausing.
+          # Dry run by default so a misconfigured run cannot pause anything.
+          if [ "${{ vars.APPLY }}" = "true" ] || [ "${{ github.event.inputs.apply }}" = "true" ]; then
+            echo "Running in APPLY mode, will pause matching items"
+            python kill_switch.py --apply
+          else
+            echo "Running in DRY RUN mode, no changes will be made"
+            python kill_switch.py
+          fi
+
+      - name: Upload pause log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: paused-log-${{ github.run_id }}
+          path: paused.jsonl
+          if-no-files-found: ignore
+          retention-days: 30

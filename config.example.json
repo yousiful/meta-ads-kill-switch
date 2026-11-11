@@ -1,0 +1,28 @@
+{
+  "_note": "Copy this to config.json and adjust the values. All keys are optional — omit any to use the default shown.",
+
+  "lifetime_spend_limit": 50,
+  "_note_lifetime": "Pause anything that has spent this much in total and produced zero results.",
+
+  "daily_spend_limit": 40,
+  "_note_daily": "Pause campaigns that have spent this much TODAY with zero results today.",
+
+  "levels": ["campaign", "adset", "ad"],
+  "_note_levels": "Which object levels to scan. Remove 'ad' or 'adset' to only check campaigns.",
+
+  "result_action_types": [
+    "purchase",
+    "offsite_conversion.fb_pixel_purchase",
+    "onsite_conversion.lead_grouped"
+  ],
+  "_note_result_types": "Actions that count as a result. See README for the lead double-count warning before adding offsite_conversion.fb_pixel_lead. Add offsite_conversion.fb_pixel_custom:OrderFormPurchase for a custom event named OrderFormPurchase.",
+
+  "protect": [
+    "120250000000000000",
+    "Always-On Brand"
+  ],
+  "_note_protect": "Items whose id or name contains any string in this list are never paused. Use partial name matches or exact numeric ids.",
+
+  "min_age_hours": 4,
+  "_note_min_age": "Do not kill anything younger than this many hours. Useful for giving new ads a grace period during the learning phase."
+}

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 1200 340" width="1200" height="340" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="1" stop-color="#141b33"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffd54a"/>
+      <stop offset="1" stop-color="#ffb300"/>
+    </linearGradient>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#ffd54a"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="340" rx="22" fill="url(#bg)"/>
+
+  <!-- title -->
+  <text x="600" y="48" text-anchor="middle" fill="#ffffff" font-size="24" font-weight="700">Stop Meta from burning your budget overnight.</text>
+  <text x="600" y="78" text-anchor="middle" fill="#8f9bc4" font-size="16">Auto-pause anything that spends over your limit with zero results.</text>
+
+  <!-- Panel 1: money burning -->
+  <rect x="60" y="104" width="230" height="168" rx="16" fill="#1b2442" stroke="#2c3866" stroke-width="1.5"/>
+  <text x="175" y="136" text-anchor="middle" fill="#ff4444" font-size="14" font-weight="700">BEFORE</text>
+  <!-- flame icon -->
+  <text x="175" y="186" text-anchor="middle" font-size="52">&#x1F525;</text>
+  <text x="175" y="228" text-anchor="middle" fill="#ff6666" font-size="22" font-weight="800">$62 spent</text>
+  <text x="175" y="252" text-anchor="middle" fill="#8f9bc4" font-size="14">0 leads. 0 results.</text>
+
+  <!-- arrow 1 -->
+  <line x1="295" y1="188" x2="378" y2="188" stroke="#ffd54a" stroke-width="3" marker-end="url(#arr)"/>
+
+  <!-- Panel 2: kill switch -->
+  <rect x="384" y="104" width="230" height="168" rx="16" fill="url(#gold)"/>
+  <text x="499" y="136" text-anchor="middle" fill="#0b1020" font-size="14" font-weight="700">KILL SWITCH</text>
+  <!-- switch icon -->
+  <rect x="434" y="152" width="130" height="52" rx="26" fill="#0b1020"/>
+  <circle cx="536" cy="178" r="22" fill="#ffd54a"/>
+  <text x="453" y="183" fill="#8f9bc4" font-size="13">OFF</text>
+  <text x="536" y="183" text-anchor="middle" fill="#0b1020" font-size="13" font-weight="800">ON</text>
+  <text x="499" y="232" text-anchor="middle" fill="#0b1020" font-size="15" font-weight="700">Rule triggered</text>
+  <text x="499" y="254" text-anchor="middle" fill="#0b1020" font-size="13">Lifetime limit hit, 0 results</text>
+
+  <!-- arrow 2 -->
+  <line x1="619" y1="188" x2="702" y2="188" stroke="#ffd54a" stroke-width="3" marker-end="url(#arr)"/>
+
+  <!-- Panel 3: paused -->
+  <rect x="708" y="104" width="230" height="168" rx="16" fill="#1b2442" stroke="#2c3866" stroke-width="1.5"/>
+  <text x="823" y="136" text-anchor="middle" fill="#44cc77" font-size="14" font-weight="700">AFTER</text>
+  <rect x="748" y="150" width="150" height="44" rx="22" fill="#1a3a26" stroke="#44cc77" stroke-width="2"/>
+  <text x="823" y="178" text-anchor="middle" fill="#44cc77" font-size="18" font-weight="800">PAUSED</text>
+  <text x="823" y="224" text-anchor="middle" fill="#c9d1e8" font-size="15">Budget protected.</text>
+  <text x="823" y="248" text-anchor="middle" fill="#8f9bc4" font-size="13">Logged to paused.jsonl</text>
+
+  <!-- command hint -->
+  <rect x="60" y="288" width="1080" height="36" rx="8" fill="#0d1527"/>
+  <text x="600" y="312" text-anchor="middle" fill="#8f9bc4" font-size="14" font-family="Consolas, Courier New, monospace">python kill_switch.py          # dry run first     |     python kill_switch.py --apply     # live pausing</text>
+</svg>

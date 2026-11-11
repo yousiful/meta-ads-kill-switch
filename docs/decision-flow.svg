@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 900 620" width="900" height="620" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0b1020"/>
+      <stop offset="1" stop-color="#141b33"/>
+    </linearGradient>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#ffd54a"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="620" rx="22" fill="url(#bg)"/>
+  <text x="450" y="44" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="700">Kill Switch Decision Flow</text>
+
+  <!-- helpers: rounded rect for boxes -->
+  <!-- Start -->
+  <rect x="325" y="66" width="250" height="48" rx="24" fill="#ffd54a"/>
+  <text x="450" y="96" text-anchor="middle" fill="#0b1020" font-size="15" font-weight="700">Scan ACTIVE items</text>
+
+  <!-- arrow down -->
+  <line x1="450" y1="114" x2="450" y2="148" stroke="#ffd54a" stroke-width="2" marker-end="url(#arr)"/>
+
+  <!-- Protected? -->
+  <polygon points="450,152 600,196 450,240 300,196" fill="#1b2442" stroke="#ffd54a" stroke-width="1.5"/>
+  <text x="450" y="192" text-anchor="middle" fill="#ffd54a" font-size="14">Protected?</text>
+  <text x="450" y="210" text-anchor="middle" fill="#8f9bc4" font-size="11">(id or name in protect list)</text>
+
+  <!-- YES -> skip -->
+  <line x1="600" y1="196" x2="720" y2="196" stroke="#ffd54a" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="655" y="188" text-anchor="middle" fill="#8f9bc4" font-size="12">Yes</text>
+  <rect x="724" y="176" width="120" height="40" rx="10" fill="#1b2442" stroke="#2c3866"/>
+  <text x="784" y="201" text-anchor="middle" fill="#8f9bc4" font-size="13">Skip</text>
+
+  <!-- NO arrow down -->
+  <line x1="450" y1="240" x2="450" y2="274" stroke="#ffd54a" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="460" y="264" fill="#8f9bc4" font-size="12">No</text>
+
+  <!-- Too new? -->
+  <polygon points="450,278 600,322 450,366 300,322" fill="#1b2442" stroke="#ffd54a" stroke-width="1.5"/>
+  <text x="450" y="318" text-anchor="middle" fill="#ffd54a" font-size="14">Age &lt; min_age_hours?</text>
+  <text x="450" y="336" text-anchor="middle" fill="#8f9bc4" font-size="11">(new items in learning phase)</text>
+
+  <!-- YES -> skip -->
+  <line x1="600" y1="322" x2="724" y2="322" stroke="#ffd54a" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="655" y="314" text-anchor="middle" fill="#8f9bc4" font-size="12">Yes</text>
+  <rect x="724" y="302" width="120" height="40" rx="10" fill="#1b2442" stroke="#2c3866"/>
+  <text x="784" y="327" text-anchor="middle" fill="#8f9bc4" font-size="13">Skip</text>
+
+  <!-- NO arrow down -->
+  <line x1="450" y1="366" x2="450" y2="400" stroke="#ffd54a" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="460" y="390" fill="#8f9bc4" font-size="12">No</text>
+
+  <!-- Lifetime rule -->
+  <polygon points="450,404 620,444 450,484 280,444" fill="#1b2442" stroke="#ffd54a" stroke-width="1.5"/>
+  <text x="450" y="438" text-anchor="middle" fill="#ffd54a" font-size="13">Lifetime spend &gt;= limit</text>
+  <text x="450" y="456" text-anchor="middle" fill="#ffd54a" font-size="13">AND results == 0?</text>
+
+  <!-- YES -> PAUSE -->
+  <line x1="620" y1="444" x2="724" y2="444" stroke="#ffd54a" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="667" y="436" text-anchor="middle" fill="#8f9bc4" font-size="12">Yes</text>
+  <rect x="724" y="424" width="120" height="40" rx="10" fill="#1a3a26" stroke="#44cc77" stroke-width="2"/>
+  <text x="784" y="449" text-anchor="middle" fill="#44cc77" font-size="14" font-weight="700">PAUSE</text>
+
+  <!-- NO -> daily rule -->
+  <line x1="450" y1="484" x2="450" y2="516" stroke="#ffd54a" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="460" y="506" fill="#8f9bc4" font-size="12">No</text>
+
+  <!-- Daily rule -->
+  <polygon points="450,520 630,556 450,592 270,556" fill="#1b2442" stroke="#ffd54a" stroke-width="1.5"/>
+  <text x="450" y="548" text-anchor="middle" fill="#ffd54a" font-size="13">Campaign + today spend &gt;= daily limit</text>
+  <text x="450" y="566" text-anchor="middle" fill="#ffd54a" font-size="13">AND today results == 0?</text>
+
+  <!-- YES -> PAUSE -->
+  <line x1="630" y1="556" x2="724" y2="556" stroke="#ffd54a" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="672" y="548" text-anchor="middle" fill="#8f9bc4" font-size="12">Yes</text>
+  <rect x="724" y="536" width="120" height="40" rx="10" fill="#1a3a26" stroke="#44cc77" stroke-width="2"/>
+  <text x="784" y="561" text-anchor="middle" fill="#44cc77" font-size="14" font-weight="700">PAUSE</text>
+
+  <!-- NO -> keep -->
+  <line x1="270" y1="556" x2="176" y2="556" stroke="#ffd54a" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="225" y="548" text-anchor="middle" fill="#8f9bc4" font-size="12">No</text>
+  <rect x="56" y="536" width="120" height="40" rx="10" fill="#1b2442" stroke="#2c3866"/>
+  <text x="116" y="561" text-anchor="middle" fill="#c9d1e8" font-size="13">Keep</text>
+</svg>

@@ -1,0 +1,23 @@
+# Secrets and tokens — never commit these
+.env
+config.json
+
+# Kill switch output logs — contain account ids and campaign names
+paused.jsonl
+logs/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
