@@ -334,4 +334,14 @@ More free tools: [kenji-clip-engine](https://github.com/yousiful/kenji-clip-engi
 
 ---
 
+## More free tools from us
+
+- **[Kenji Clip Engine](https://github.com/yousiful/kenji-clip-engine)**: turn any YouTube video into captioned vertical clips and post them everywhere through Kenji.
+- **[No-Website Finder](https://github.com/yousiful/no-website-finder)**: find local businesses on Google Maps with no website and push them into Kenji to pitch.
+- **[Reel Editing Toolkit](https://github.com/yousiful/reel-editing-toolkit)**: our full animated reel pipeline.
+
+## Feedback and bugs
+
+Something broke, or you want a feature? **[Open an issue](https://github.com/yousiful/meta-ads-kill-switch/issues/new/choose)**. We read every one and fix what we can. If this saved you time, a star helps other people find it.
+
 MIT License.
