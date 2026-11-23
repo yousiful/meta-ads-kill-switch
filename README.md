@@ -337,6 +337,11 @@ We run Meta ads end-to-end and feed every lead directly into your CRM with autom
 - **[Kenji Clip Engine](https://github.com/yousiful/kenji-clip-engine)**: turn any YouTube video into captioned vertical clips and post them everywhere through Kenji.
 - **[No-Website Finder](https://github.com/yousiful/no-website-finder)**: find local businesses on Google Maps with no website and push them into Kenji to pitch.
 - **[Reel Editing Toolkit](https://github.com/yousiful/reel-editing-toolkit)**: our full animated reel pipeline.
+- **[GHL Client Onboarding](https://github.com/yousiful/ghl-client-onboarding)**: intake form, onboarding checklist and a read-only GoHighLevel sub-account audit.
+- **[AI Voice Agent Playbook](https://github.com/yousiful/ai-voice-agent-playbook)**: prompt templates and a linter for AI setter, closer and receptionist agents.
+- **[Voice AI White Label Kit](https://github.com/yousiful/voice-ai-whitelabel-kit)**: agreement template and rebilling margin calculator for agencies.
+- **[GHL Failed Payment Recovery](https://github.com/yousiful/ghl-failed-payment-recovery)**: find failed payments and send polite card-update reminders.
+- **[Options Trade Toolkit](https://github.com/yousiful/options-trade-toolkit)**: options pricing, greeks, position sizing and a trade journal.
 
 ## Feedback and bugs
 
